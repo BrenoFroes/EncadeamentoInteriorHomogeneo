@@ -82,6 +82,7 @@ void remover(No **l, int valor){
     if(vazia(l) == 1){
         printf("Lista vazia\n");
     }else if((*l)->dado == 1){
+
         free(aux);
         (*l)->dado--;
     }else{
@@ -135,7 +136,7 @@ int main(void) {
     for(int i = 0; i<40; i++){
         tabela[i] = criaLista();
     }
-    srand(time(NULL));
+    /* srand(time(NULL)); /* essa linha permite que a cada "run" sejam gerados números diferentes, caso queira os mesmos aleatórios sempre só deletá-la */
     for (int i=0; i<40; i++){
         insereNumero(tabela, rand ()%100);
     }
@@ -152,6 +153,8 @@ int main(void) {
     insereNumero(tabela, 32);*/
 
 
+    imprime(tabela);
+    removeNumero(tabela, 11);
     imprime(tabela);
     return 0;
 
